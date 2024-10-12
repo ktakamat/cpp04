@@ -4,15 +4,16 @@
 #include <string>
 #include <iostream>
 
-class Brain {
-public:
-	Brain();
-	Brain(const Brain& other);
-	~Brain();
-	Brain& operator=(const Brain& other);
+class Brain
+{
+	public:
+		Brain();
+		Brain(const Brain& other);
+		~Brain();
+		Brain& operator=(const Brain& other);
 
-private:
-	std::string ideas[100];
+	private:
+		std::string ideas[100];
 };
 
 #endif

@@ -10,7 +10,7 @@ Dog::Dog()
 
 Dog::Dog(const Dog& other) : Animal(other)
 {
-	brain = new Brain(*other.brain);
+	brain = new Brain(*other.brain);  // 深いコピーを行う
 	std::cout << "Dog copy constructor called." << std::endl;
 }
 
@@ -19,8 +19,8 @@ Dog& Dog::operator=(const Dog& other)
 	if (this != &other)
 	{
 		Animal::operator=(other);
-		delete brain;
-		brain = new Brain(*other.brain);
+		delete brain;  // 現在のBrainオブジェクトを削除
+		brain = new Brain(*other.brain);  // コピー元のBrainオブジェクトを深くコピーする
 	}
 	std::cout << "Dog assignment operator called." << std::endl;
 	return *this;
